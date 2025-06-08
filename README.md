@@ -24,9 +24,32 @@ Repozytorium dotyczy implementacji podpisu cyfrowego na podstawie **TRNG**. Proj
 
 ## Uruchamianie
 
-### Klonowanie repozytorium
+### 1. Klonowanie repozytorium
+
 ```bash
 git clone https://github.com/vanshor/PodpisCyfrowy
+```
+
+### 2. Instalacja zależności
+
+```bash
+pip install opencv-python numpy cryptography
+```
+
+### 3. Generowanie danych TRNG
+
+```bash
+cd PodpisCyfrowy
+python pobieranie_danych.py
+python preprocessing_algorithm.py
+python sha3-256.py
+python postprocessing_sha3.py
+```
+
+### 4. Podpisanie wiadomości
+
+```bash
+python podpis.py
 ```
 
 ## Wykonano przez
