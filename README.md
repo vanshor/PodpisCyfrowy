@@ -1,5 +1,5 @@
 # Podpis cyfrowy
-Repozytorium dotyczy implementacji podpisu cyfrowego na podstawie **TRNG**. Projekt tworzony jest w ramach przedmiotu "Bezpieczeństwo Systemów Teleinformatycznych".
+Repozytorium dotyczy implementacji podpisu cyfrowego na podstawie **TRNG**. Projekt tworzony jest w ramach przedmiotu **"Bezpieczeństwo Systemów Teleinformatycznych"**.
 
 ## Wytwarzanie liczb prawdziwie losowych
 
@@ -45,6 +45,9 @@ python preprocessing_algorithm.py
 python sha3-256.py
 python postprocessing_sha3.py
 ```
+> [!NOTE]
+> Jeżeli program `pobieranie_danych.py` zostanie uruchomiony za krótko, możliwe jest niewygenerowanie wszystkich ramek w folderze `dane_YCbCr/`.
+> Wówczas należy zmienić nazwy przypisane do tych zmiennych w plikach `preprocessing_algorithm.py`, `postprocessing_algorithm.py` oraz `postprocessing_sha3.py`.
 
 ### 4. Podpisanie wiadomości
 
