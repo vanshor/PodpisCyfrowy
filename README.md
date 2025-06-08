@@ -15,7 +15,7 @@ Repozytorium dotyczy implementacji podpisu cyfrowego na podstawie **TRNG**. Proj
   - Mapowanie do 32-bit signed int (big-endian),
   - Normalizacja do `<0;1>` i zapis jako 64-bit `float`.
 
-## Chaotyczna mapa logiczna (CCML);
+## Chaotyczna mapa logiczna (CCML)
 
 - Nowy stan `xₜ₊₁` zależy od trzech poprzednich: `xᵢ₋₁`, `xᵢ`, `xᵢ₊₁`.  
 - Iteracje: `floor(L / 2)`.
