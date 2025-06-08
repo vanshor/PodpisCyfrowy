@@ -62,10 +62,12 @@ def zapisz(): #zapisywanie wartosci tablicy "Z" do plikow txt
             with open(output_filename, 'w') as out_f:
                 out_f.write(' '.join(map(str, result)))
 
-zapisz()
-# mamy juz zapisane wartosci tablicy Z ktore beda wejsciem do post processingu
-# do zrobienia post processing 
-with open("dane_YCbCr/frame_0080_Y.txt") as f1:
-    Y_a = read_txt_file(f1)
-    for i in range(5):
-        print(Y_a[i])
+if __name__ == "__main__":
+    zapisz()
+    # mamy juz zapisane wartosci tablicy Z ktore beda wejsciem do post processingu
+    # do zrobienia post processing
+    with open("dane_YCbCr/frame_0080_Y.txt") as f1:
+        Y_a = read_txt_file(f1)
+        for i in range(5):
+            print(Y_a[i])
+
