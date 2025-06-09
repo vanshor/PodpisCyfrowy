@@ -86,6 +86,18 @@ except InvalidSignature:
 tampered_message = "Jan KowalskI".encode("utf-8")
 try:
     public_key.verify(signature, tampered_message, ec.ECDSA(hashes.SHA256()))
-    print("Zmieniona wiadomość: podpis nadal działa")
+    print("Zmieniona wiadomość: podpis nadal działa.")
 except InvalidSignature:
     print("Zmieniona wiadomość: podpis niepoprawny.")
+
+# Weryfikacja podpisu z nieodpowiednim kluczem
+digest2 = hashlib.sha256(trng_data[::-1]).digest()  
+private_int2 = int.from_bytes(digest2, "big") % secp256r1_order
+other_private_key = ec.derive_private_key(private_int2, ec.SECP256R1())
+other_public_key = other_private_key.public_key()
+
+try:
+    other_public_key.verify(signature, message, ec.ECDSA(hashes.SHA256()))
+    print("Inny klucz: podpis poprawny.")
+except InvalidSignature:
+    print("Inny klucz: podpis niepoprawny.")
