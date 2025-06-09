@@ -12,7 +12,8 @@ from postprocessing_sha3 import postprocessing_algorithm
 RAMKA_POCZ = 50
 RAMKA_KON = 80
 BIT_COUNT = 2048
-message = "Jan Kowalski".encode("utf-8")
+with open("przyklad.pdf", "rb") as f:
+    message = f.read()
 # -------------------------------
 
 def read_txt(path):
@@ -83,7 +84,8 @@ except InvalidSignature:
     print("Oryginalna wiadomość: podpis niepoprawny!")
 
 # Weryfikacja zmienionej wiadomości
-tampered_message = "Jan KowalskI".encode("utf-8")
+with open("przyklad_podmiana.pdf", "rb") as f:
+    tampered_message = f.read()
 try:
     public_key.verify(signature, tampered_message, ec.ECDSA(hashes.SHA256()))
     print("Zmieniona wiadomość: podpis nadal działa.")
